@@ -57,3 +57,39 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item-quantity button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.item-quantity span {
+  font-weight: bold;
+}
+
+.btn-remove, .btn-clear-cart {
+  background: none;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn-clear-cart {
+  display: block;
+  margin-bottom: 1rem;
+  margin-left: auto;
+}
