@@ -1,21 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ProductDetailPage from './pages/ProductDetailPage';
+import HomePage from './pages/HomePage.jsx';
+import ProductDetailPage from './pages/ProductDetailPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';       
+import RegisterPage from './pages/RegisterPage.jsx'; 
 
-import Navbar from './layout/Navbar';
-import Footer from './layout/Footer';
+import Navbar from './layout/Navbar.jsx';
+import Footer from './layout/Footer.jsx';
 
 function App() {
   return (
     <div className="app-container">
-      <Navbar /> 
+      <Navbar />
       <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products/:id" element={<ProductDetailPage />} />
+          <Route path="/login" element={<LoginPage />} />         
+          <Route path="/register" element={<RegisterPage />} />   
         </Routes>
       </main>
-      <Footer /> 
+      <Footer />
     </div>
   );
 }
