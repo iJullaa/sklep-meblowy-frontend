@@ -3,9 +3,9 @@ import HomePage from './pages/HomePage.jsx';
 import ProductDetailPage from './pages/ProductDetailPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';       
 import RegisterPage from './pages/RegisterPage.jsx'; 
-
 import Navbar from './layout/Navbar.jsx';
 import Footer from './layout/Footer.jsx';
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetailPage />} />
           <Route path="/login" element={<LoginPage />} />         
           <Route path="/register" element={<RegisterPage />} />   
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </main>
       <Footer />
