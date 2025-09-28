@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import apiClient from '../api/axios';
 
 function HomePage() {
@@ -31,12 +32,12 @@ function HomePage() {
       <div className="products-grid">
         {products.length > 0 ? (
           products.map((product) => (
-            <div key={product.id} className="product-card">
+            <Link key={product.id} to={`/products/${product.id}`} className="product-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <img src={product.imageUrl} alt={product.name} style={{ maxWidth: '200px' }}/>
               <h2>{product.name}</h2>
-              <p>{product.category ? product.category.name : 'Brak kategorii'}</p>
+              <p>{product.category?.name || 'Brak kategorii'}</p>
               <p>{product.price} zł</p>
-            </div>
+            </Link>
           ))
         ) : (
           <p>Brak produktów do wyświetlenia.</p>
