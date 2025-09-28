@@ -37,3 +37,23 @@
 .navbar-links a:hover {
   color: #3498db;
 }
+
+.navbar-welcome span {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.navbar-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: #c0392b;
+}

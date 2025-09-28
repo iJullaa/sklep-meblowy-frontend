@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'; 
 import apiClient from '../api/axios';
+import { useAuth } from '../contexts/AuthContext';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
-    setError(null); 
+    e.preventDefault();
+    setError(null);
 
     try {
       const response = await apiClient.post('/auth/login', {
@@ -18,8 +20,8 @@ function LoginPage() {
         password,
       });
 
-      console.log('Zalogowano pomyślnie!', response.data);
-      
+      login(response.data);
+
       navigate('/');
     } catch (err) {
       setError('Nieprawidłowy email lub hasło.');
